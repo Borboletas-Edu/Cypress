@@ -6,7 +6,7 @@ describe('Funcionalidade de login', () => {
         cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
     });
 
-    after(() => {
+    afterEach(() => {
         cy.screenshot()
     });
 
