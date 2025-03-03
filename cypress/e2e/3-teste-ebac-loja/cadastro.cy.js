@@ -5,7 +5,7 @@ import { faker } from '@faker-js/faker';
 describe('Análises na função de cadastro', () => {
     
     beforeEach(() => {
-        cy.visit('http://lojaebac.ebaconline.art.br/minha-conta/')
+        cy.visit('minha-conta')
     })
 
     it('Cadastro e alterações válidas', () => {
@@ -23,7 +23,7 @@ describe('Análises na função de cadastro', () => {
             
             var primeironome = faker.person.firstName()
             var sobrenome = faker.person.lastName()
-            var email = faker.internet.email() 
+            var email = faker.internet.email(nome) 
 
             cy.get('#reg_email').type(email)
             cy.get('#reg_password').type('senhaforte')
