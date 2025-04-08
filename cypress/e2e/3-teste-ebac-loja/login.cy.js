@@ -31,7 +31,7 @@ describe('Funcionalidade de login', () => {
         cy.get('.woocommerce-error > li').should('contain', 'A senha fornecida para o e-mail')
     });
 
-    it.only('Login utilizando massa de dados', () => {
+    it('Login utilizando massa de dados', () => {
         cy.get('#username').type(usu.email)
         cy.get('#password').type(usu.senha)
         cy.get('.woocommerce-form > .button').click()
@@ -48,5 +48,23 @@ describe('Funcionalidade de login', () => {
             ('contain', 'edu.teste')
         })
     });
+
+    it('Login com sucesso usando fixture', () => {
+        cy.fixture('usuario').then(dadosdelogin => {
+            cy.get('#username').type(dadosdelogin.email)
+            cy.get('#password').type(dadosdelogin.senha)   
+            cy.get('.woocommerce-form > .button').click()   
+            cy.get('.woocommerce-MyAccount-content > :nth-child(2) > :nth-child(2)').should
+            ('contain', 'edu.teste')        
+        })     
+    });
+
+    it('Login utilizando comandos customizados', () => {
+        cy.login('edu.teste@teste.com', 'senhaforte')
+        cy.get('.woocommerce-MyAccount-content > :nth-child(2) > :nth-child(2)').should
+    });
+
+
+
 })
 
