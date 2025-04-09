@@ -1,0 +1,22 @@
+[
+    {
+        "nomeProduto": "Apollo Running Short",
+        "tamanho": 32,
+        "cor": "Black",
+        "quantidade": 2
+    },
+    
+    {
+        "nomeProduto": "Ariel Roll Sleeve Sweatshirt",
+        "tamanho": "M",
+        "cor": "Green",
+        "quantidade": 1
+    },
+
+    {
+        "nomeProduto": "Aether Gym Pant",
+        "tamanho": 33,
+        "cor": "Brown",
+        "quantidade": 3
+    }
+]
