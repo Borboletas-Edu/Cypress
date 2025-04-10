@@ -11,8 +11,8 @@ describe('Funcionalidade de login', () => {
         cy.get('#username').type('edu.teste@teste.com')
         cy.get('#password').type('senhaforte')
         cy.get('.woocommerce-form > .button').click()
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2) > :nth-child(2)').should
-        ('contain', 'edu.teste')
+        cy.get('a > .hidden-xs').should
+        ('contain', 'Welcome')
     })
     
     it('Login com email inválido', () => {
@@ -35,8 +35,8 @@ describe('Funcionalidade de login', () => {
         cy.get('#username').type(usu.email)
         cy.get('#password').type(usu.senha)
         cy.get('.woocommerce-form > .button').click()
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2) > :nth-child(2)').should
-        ('contain', 'edu.teste')
+        cy.get('a > .hidden-xs').should
+        ('contain', 'Welcome')
     });
 
     it('Login utilizando  e adicionando log', () => {
@@ -44,8 +44,8 @@ describe('Funcionalidade de login', () => {
             cy.get('#username').type(usu.email, {log: false})
             cy.get('#password').type(usu.senha, {log: false})
             cy.get('.woocommerce-form > .button').click()
-            cy.get('.woocommerce-MyAccount-content > :nth-child(2) > :nth-child(2)').should
-            ('contain', 'edu.teste')
+            cy.get('a > .hidden-xs').should
+            ('contain', 'Welcome')
         })
     });
 
@@ -54,14 +54,15 @@ describe('Funcionalidade de login', () => {
             cy.get('#username').type(dadosdelogin.email)
             cy.get('#password').type(dadosdelogin.senha)   
             cy.get('.woocommerce-form > .button').click()   
-            cy.get('.woocommerce-MyAccount-content > :nth-child(2) > :nth-child(2)').should
-            ('contain', 'edu.teste')        
+            cy.get('a > .hidden-xs').should
+            ('contain', 'Welcome')       
         })     
     });
 
     it('Login utilizando comandos customizados', () => {
         cy.login('edu.teste@teste.com', 'senhaforte')
-        cy.get('.woocommerce-MyAccount-content > :nth-child(2) > :nth-child(2)').should
+        cy.get('a > .hidden-xs').should
+        ('contain', 'Welcome')
     });
 
 
