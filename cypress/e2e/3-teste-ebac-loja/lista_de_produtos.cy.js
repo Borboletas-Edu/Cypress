@@ -54,7 +54,7 @@ describe('Análise na lista de produtos', () => {
             let item = 1
             produtosPage.buscarProdutoLista(dados[item].nomeProduto)
             produtosPage.addProdutoCarrinho(dados[item].tamanho, dados[item].cor , dados[item].quantidade)
-            cy.get('.woocommerce-message').should('contain',  dados[1].nomeProduto)
+            cy.get('.woocommerce-message').should('contain',  dados[item].nomeProduto)
         })
         })
         
